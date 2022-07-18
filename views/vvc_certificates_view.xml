@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="vvc_certificates_form_view" model="ir.ui.view">
+            <field name="name">Certificates Form View</field>
+            <field name="model">vvc.certificate</field>
+            <field name="arch" type="xml">
+              <form>                
+                <sheet>
+                    <group>
+                        <group string="Basic Data">
+                            <field name="SerialNumber"/>
+                            <field name="CertificateType"/>
+                            <field name="TrafficDepartment"/>    
+                            <field name="Customer"/>  
+                            <field name="Price"/>                            
+                        </group>
+
+                        <group string="Car Data">
+                            <field name="VehicleType"/>
+                            <field name="CarModel"/>
+                            <field name="Brand"/>
+                            <field name="MotorNumber"/>
+                            <field name="ChasisNumber"/>  
+                            <field name="print_logs" invisible="1"/>                          
+                        </group>
+                    </group>
+                </sheet>
+             </form>        
+            </field>           
+        </record>
+
+         <record id="vvc_certificates_tree_view" model="ir.ui.view">
+            <field name="name">Certificates Tree View</field>
+            <field name="model">vvc.certificate</field>
+            <field name="arch" type="xml">
+              <tree>
+                <header>
+                    <button name="print_report" string="Print" class="btn-primary" type="object"/>
+                    <button name="allow_print" string="Allow Reprint" class="btn-primary" type="object" groups="vvc.vvc_supervisors_group"/>
+                </header>                
+                <field name="SerialNumber"/>
+                <field name="CertificateType"/>
+                <field name="TrafficDepartment"/> 
+             </tree>        
+            </field>           
+        </record>
+
+
+        <record id="vvc_certificates_action" model="ir.actions.act_window">
+            <field name="name">Certificates</field>
+            <field name="res_model">vvc.certificate</field>
+            <field name="view_mode">kanban,tree,form</field>  
+        </record>
+
+        <record id="seq_certificates" model="ir.sequence">
+            <field name="name">certificates ID</field>
+            <field name="code">certificates.id</field>
+            <field name="prefix">TD</field>
+            <field name="padding">5</field>
+            <field name="active">TRUE</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        
+        
+        <menuitem id="vvc_certificates" name="Certificates" parent="vvc_root_menu" action="vvc_certificates_action"/>
+
+    </data>
+</odoo>

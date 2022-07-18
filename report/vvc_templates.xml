@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <template id="vvc_certificate_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="certificate">
+                    <t t-call="web.external_layout">
+                        <div class="row border border-4 border-primary">
+                            <div class="page" dir="rtl">
+                                
+                                <div class="row d-flex justify-content-center text-center">
+                                        <h2 style="color: red;"> شهادة صلاحية </h2>
+                                    </div>
+                                
+
+                                <br/>
+                                <div class="row" dir="rtl">
+                                    <div class="col-md-6">
+                                        <h5 class="text-right"  dir="rtl">السيد اللواء مدير ادارة مرور / <span t-out="certificate.TrafficDepartment.dep_name"/> </h5>                   
+                                    </div>                               
+                                </div>
+
+                                <div class="row" dir="LTR">
+                                    <div class="col-md-3" dir="LTR">
+                                        <h5 class="text-left"  dir="LTR">تحريرا فى  <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>   </h5>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="row d-flex justify-content-center text-center">
+                                    <h2 style="color: red;"> تحية طيبة وبعد ,,, </h2>
+                                </div>
+                            
+
+                                <div class="row" dir="rtl">
+                                    <div class="col-md-6">
+                                        <h5 class="text-right"  dir="rtl">اتشرف بإفادة سيادتكم بأنه تم تعديل /  <span t-out="certificate.CertificateType.cert_name"/></h5>                                    
+                                    </div>
+                                </div>
+
+                                <div class="row" dir="rtl">
+                                    <div class="col-md-6" dir="rtl">
+                                        <h5 class="text-right"  dir="rtl">شاسيه رقم /  <span t-out="certificate.ChasisNumber"/></h5>
+                                        <h5 class="text-right"  dir="rtl">الماركة /  <span t-out="certificate.Brand.brand"/></h5>                                    
+                                        <h5 class="text-right"  dir="rtl">اسم المالك /  <span t-out="certificate.Customer.name"/></h5>                                    
+                                    </div>
+
+                                    <div class="col-md-6" dir="rtl">
+                                        <h5 class="text-right"  dir="rtl">محرك رقم /  <span t-out="certificate.MotorNumber"/></h5>
+                                        <h5 class="text-right"  dir="rtl">موديل /  <span t-out="certificate.CarModel"/></h5>                              
+                                    </div>
+                                </div>
+
+
+
+                                <br/>
+
+                                <div class="row" dir="rtl">
+                                    <div class="col-md-12" dir="rtl">
+                                        <p class="text-right"  dir="rtl">
+                                            حيث ان المؤسسة معتمدة بالهيئة العامة للتنمية الصناعية ومصلحة الرقابة الصناعية
+                                            ومعتمدة بإدارات المرور ولها سجل صناعى وبطاقة ضريبية بهذه الصفة وقد تم فحص التعديل والتركيب واللحامات والإصلاحات اللازمة 
+                                            طبقا لأصول الصناعة ودون الاخلال بالتصميم الاصلي ودون المساس بالأجزاء الجوهرية للسيارة وقد 
+                                            تم تجربة السيارة على الطرق المصرية ووجد انها متزنة وهذه شهادة منا بذلك لتقديمها 
+                                            للمرور و المالك مسؤول مسئولية كاملة عن بيانات الشهادة فبرجاء التكرم والتفضل بالموافقة 
+                                            على ترخيص السيارة
+                                        </p>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="row d-flex justify-content-center text-center">
+                                    <h2 style="color: red;"> وتفضلو بقبول فائق الاحترام والتقدير </h2>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+
+                    </t>
+                    
+                </t>
+
+            </t>
+        </template>
+    
+    </data>
+    
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="vvc_certificate_type_action" model="ir.actions.act_window">
+            <field name="name">Certificate Type</field>
+            <field name="res_model">vvc.certificate.type</field>
+            <field name="view_mode">kanban,tree,form</field>           
+        </record>
+
+        <menuitem id="vvc_certificate_type" name="Certificate Type" parent="vvc_root_menu" action="vvc_certificate_type_action"/>
+
+    </data>
+</odoo>

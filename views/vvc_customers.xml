@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+         <record id="vvc_customers_action" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>           
+        </record>
+
+        <menuitem id="vvc_customers" name="Customers" parent="vvc_root_menu" action="vvc_customers_action"/>
+
+    </data>
+</odoo>

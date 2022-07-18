@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="vvc.list">
+      <field name="name">VVC list</field>
+      <field name="model">vvc.vvc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="vvc.action_window">
+      <field name="name">VVC window</field>
+      <field name="res_model">vvc.vvc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="vvc.action_server">
+      <field name="name">VVC server</field>
+      <field name="model_id" ref="model_vvc_vvc"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="VVC" id="vvc.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="vvc.menu_1" parent="vvc.menu_root"/>
+    <menuitem name="Menu 2" id="vvc.menu_2" parent="vvc.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="vvc.menu_1_list" parent="vvc.menu_1"
+              action="vvc.action_window"/>
+    <menuitem name="Server to list" id="vvc" parent="vvc.menu_2"
+              action="vvc.action_server"/>
+-->
+  </data>
+</odoo>
